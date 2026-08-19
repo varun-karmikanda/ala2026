@@ -95,6 +95,10 @@ class Vec:
             result.append(rounded)
         return Vec(result)
 
+    def __mul__(self, scalar: int | float) -> Self:
+        return self.__rmul__(scalar) 
+
+
     def __rmul__(self, scalar: int | float) -> Self:
         """
         Multiplies the each element of the vector by a given scalar numeric value.
