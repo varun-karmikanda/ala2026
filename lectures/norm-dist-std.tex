@@ -62,7 +62,7 @@
 \title{\center{Applied Linear Algebra \\\vsp Norm and Distance \\}}
 
 \author{\center{Devi Prasad M \\ Manipal School of Information Sciences \\ Manipal \\}}
-\date{\center{August 2026}}
+\date{\center{August-September, 2026}}
 \maketitle
 
 \begin{frame}\FrameTitle{Euclidean Norm}{Unit 1}
@@ -358,77 +358,6 @@ A couple of \emph{norm identities}
                 status in determining the vector distance.
         \item The numerical values should be approximately of the same magnitude.
     \end{itemize}
-\end{frame}
-
-\begin{frame}\FrameTitle{De-meaned Vector}{Unit 1}
-    For any vector $\MVec{x} \in \mathbb{R}^n$, the \emph{mean} of its entries is
-    \[
-        \Avg{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
-    \]
-    and the associated \emph{de-meaned} vector is
-    \[
-        \overline{\MVec{x}} = \MVec{x} - \Avg{x}\MVec{1}_n
-    \]
-
-    Notice $\Avg{\overline{\MVec{x}}} = 0$, that is, the mean
-    value of the entries of $\overline{\MVec{x}}$ is zero.
-\end{frame}
-
-\begin{frame}\FrameTitle{De-meaned Vector}{Unit 1}
-    \QuizQuestion{What is $\overline{\MVec{x}}$ if all entries of $\MVec{x}$ are equal?}
-\end{frame}
-
-\begin{frame}\FrameTitle{Standard Deviation}{Unit 1}
-    The \emph{standard deviation} of an $n$-vector $\MVec{x}$
-    is defined as the RMS value of the de-meaned vector $\MVec{x} - \Avg{x}\MVec{1}_n$:
-
-    \[
-        \begin{array}{rll}
-            \Std{\MVec{x}} &=& \sqrt{\dfrac{1}{n}\sum_{i=1}^{n} (x_i - \Avg{x})^2} \\[1.5em]
-            &=& \sqrt{\dfrac{(x_1-\Avg{x})^2 + \cdots + (x_n-\Avg{x})^2}{n}} \\[1.5em]
-            &=& \dfrac{\Norm{\overline{\MVec{x}}}}{\sqrt{n}} \\[1.5em]
-            &=& \dfrac{\lVert\,\MVec{x} - (\MVec{1}^{\Trans} \, \MVec{x}/{n}) \, \MVec{1}\,\rVert}{\sqrt{n}}
-        \end{array}
-    \]
-\end{frame}
-
-\begin{frame}\FrameTitle{Standard Deviation}{Unit 1}
-    \begin{itemize}
-    \item The standard deviation of a vector is \textbf{zero} only
-            when all its entries are equal.
-    \item The standard deviation of a vector is \emph{small} when the
-            entries of the vector are nearly the same.
-    \end{itemize}
-
-    \vspace*{2em}
-    The standard deviation of a vector $\MVec{x}$ tells us the typical
-    amount by which its entries deviate from their average value.
-\end{frame}
-
-
-\begin{frame}\FrameTitle{Least Squares}{Unit 1}
-For most choices of \Vector{b}, however, there is no $n$-vector
-\Vector{x} for which $\MMat{A} \MVec{x} = \MVec{b}$. As a
-compromise, we seek an $x$ for which $\MVec{r} = \MMat{A} \MVec{x} - \MVec{b}$,
-which we call the \emph{residual} (for the equations $\MMat{A} \MVec{x} - \MVec{b}$),
-is as small as possible.
-
-\vsp
-
-We should choose $\MVec{x}$ so as to minimize the norm of the
-residual, $\MMat{A} \MVec{x} - \MVec{b}.$
-
-\end{frame}
-
-
-\begin{frame}\FrameTitle{Least Squares}{Unit 1}
-Minimizing the norm of the residual and its square are the same, so we can just
-as well minimize
-\[
-    \lVert \MMat{A} \MVec{x} - \MVec{b} \rVert^2 = \lVert r \rVert^2 = r^2_1 + \cdots + r^2_m,
-\]
-the sum of squares of the residuals.
-
 \end{frame}
 
 \end{document}
