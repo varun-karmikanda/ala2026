@@ -19,17 +19,10 @@
 
 \iftrue
 %\setstretch{1.025} % a little more space between lines
-\setmainfont{texgyrepagella}[
-  Extension = .otf,
-  UprightFont = *-regular,
-  BoldFont = *-bold,
-  ItalicFont = *-italic,
-  BoldItalicFont = *-bolditalic,
-  Color=charcoal,
-]
+\setmainfont[Path=../fonts/, Extension=.otf, UprightFont=LibertinusSerif-Regular, BoldFont=LibertinusSerif-Bold, ItalicFont=LibertinusSerif-Italic, BoldItalicFont=LibertinusSerif-BoldItalic]{LibertinusSerif}
 \fi
 
-\setmathfont{texgyrepagella-math.otf}[Color=charcoal]
+\setmathfont[Path=../fonts/]{STIXTwoMath-Regular.otf}
 \pagecolor{white!6}
 
 \pretitle{\begin{center}\Large\addfontfeatures{LetterSpace=-1.5}}
