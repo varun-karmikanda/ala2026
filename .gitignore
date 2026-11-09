@@ -22,9 +22,13 @@ share/
 *.fls
 *.xdv
 *.fdb_latexmk
+fonts/*.otf
+fonts/*.zip
+fonts/*.download
+fonts/.directory
 .DS_Store
 src/linalg/bin
 src/linalg/lib
 src/linalg/include
 src/linalg/share
-
+venv/**

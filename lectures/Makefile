@@ -1,58 +1,63 @@
+ROOT := ..
+
+.PHONY: help fonts all clean clean-all
+
+help:
+	@$(MAKE) -C $(ROOT) help
+
+fonts:
+	@$(MAKE) -C $(ROOT) fonts
+
+define build
+	@$(MAKE) -C $(ROOT) pdf FILE=lectures/$(1)
+	@$(MAKE) -C $(ROOT) open FILE=$(basename $(1)).pdf
+endef
+
 intro:
-	latexmk -xelatex --shell-escape intro.tex
-	open intro.pdf
+	$(call build,intro.tex)
 
 affine:
-	latexmk -xelatex --shell-escape affine.tex
-	open affine.pdf
+	$(call build,affine.tex)
 
 vec-angle-proof:
-	latexmk -xelatex vector-angle-proof.tex
-	open vector-angle-proof.pdf
+	$(call build,vector-angle-proof.tex)
 
 vec-questions:
-	latexmk -xelatex --shell-escape vec-questions.tex
-	open vec-questions.pdf
+	$(call build,vec-questions.tex)
 
 vector-spaces:
-	latexmk -xelatex --shell-escape vec-spaces.tex
-	open vec-spaces.pdf
+	$(call build,vec-spaces.tex)
 
 linear-functions:
-	latexmk -xelatex --shell-escape linear-functions.tex
-	open linear-functions.pdf
+	$(call build,linear-functions.tex)
 
 norm-dist:
-	latexmk -xelatex --shell-escape norm-dist-std.tex
-	open norm-dist-std.pdf
+	$(call build,norm-dist-std.tex)
 
 matrix-vec:
-	latexmk -xelatex --shell-escape matrix-vec-linear.tex
-	open matrix-vec-linear.pdf
+	$(call build,matrix-vec-linear.tex)
 
 np:
-	latexmk -xelatex --shell-escape np00.tex
-	open np00.pdf
+	$(call build,np00.tex)
 
 ndarray:
-	latexmk -xelatex --shell-escape ndarray.tex
-	open ndarray.pdf
+	$(call build,ndarray.tex)
 
 knn:
-	latexmk -xelatex knn-example.tex
-	latexmk -xelatex knn-house-price.tex
-	open knn-house-price.pdf
+	$(call build,knn-example.tex)
+	$(call build,knn-house-price.tex)
 
-all: numpy
-	echo "Done!"
+gradient:
+	$(call build,gradient.tex)
 
-copy-my-mint-style:
-	cp mymint.py ../src/linalg/lib/python3.12/site-packages/pygments/styles/mymint.py
-	cp mymint.py /usr/local/lib/python3.11/site-packages/pygments/styles/mymint.py
+least-squares:
+	$(call build,least-squares.tex)
 
-mint-style:
-	sudo python -m pygments.cmdline -S mymint -f latex
+all:
+	@$(MAKE) -C $(ROOT) all
 
 clean:
-	@rm -f *.aux *.log *.snm *.out *.toc *.nav *.vrb *.fls *.xdv *.fdb_latexmk
-	@rm -rf _minted *.message.minted
+	@$(MAKE) -C $(ROOT) clean
+
+clean-all:
+	@$(MAKE) -C $(ROOT) clean-all
