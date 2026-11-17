@@ -33,17 +33,24 @@
 
 \iftrue
 \setstretch{1.025} % a little more space between lines
-\setmainfont[Path=../fonts/, Extension=.otf, UprightFont=LibertinusSerif-Regular, BoldFont=LibertinusSerif-Bold, ItalicFont=LibertinusSerif-Italic, BoldItalicFont=LibertinusSerif-BoldItalic]{LibertinusSerif}
+\setmainfont{texgyrepagella}[
+  Extension = .otf,
+  UprightFont = *-regular,
+  BoldFont = *-bold,
+  ItalicFont = *-italic,
+  BoldItalicFont = *-bolditalic,
+  Color=charcoal,
+]
 \fi
 
-\setmathfont[Path=../fonts/]{STIXTwoMath-Regular.otf}
+\setmathfont{texgyrepagella-math.otf}
 
 \iffalse
-\setmainfont[Path=../fonts/, Extension=.otf, UprightFont=LibertinusSerif-Regular, BoldFont=LibertinusSerif-Bold, ItalicFont=LibertinusSerif-Italic, BoldItalicFont=LibertinusSerif-BoldItalic]{LibertinusSerif}
-%\setsansfont[Path=../fonts/, Extension=.otf, UprightFont=LibertinusSans-Regular, BoldFont=LibertinusSans-Bold, ItalicFont=LibertinusSans-Italic]{LibertinusSans}
+\setmainfont{Libertinus Serif}[Color=charcoal]
+%\setsansfont{Libertinus Sans}[scale=0.5]
 %\setmonofont{DejaVu Sans Mono}[scale=0.5]
-\setmathfont[Path=../fonts/]{STIXTwoMath-Regular.otf}
-%\setmathfont[Path=../fonts/]{STIXTwoMath-Regular.otf}
+\setmathfont{STIXTwoMath-Regular.otf}
+%\setmathfont{STIX Two Math}
 \fi
 
 \newcommand{\scaletop}[1]{\raisebox{1.5pt}{\scalebox{0.75}{$#1\top$}}}
